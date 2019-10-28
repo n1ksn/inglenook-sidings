@@ -6,7 +6,7 @@ This set of predicates has been tested using SWI Prolog and gprolog on
 Linux and using SWI Prolog on Windows 10.
 
 Andrew Palm
-2019-10-26
+2019-10-28
 
 Quick start
 -----------

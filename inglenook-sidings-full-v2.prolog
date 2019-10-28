@@ -60,6 +60,12 @@
 %%%         the end state are in numerical order, five on track 1 and three
 %%%         on track 2.
 %%%
+%%% To exit SWI Prolog, type the query
+%%%
+%%% ?- halt().
+%%%
+%%% For gprolog, omit the parentheses.
+%%%
 %%% Standard problems
 %%% -----------------
 %%% At the start there are five cars on track 1 representing an arriving

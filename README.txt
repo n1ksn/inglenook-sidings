@@ -1,9 +1,19 @@
 ------------------------------------------------------------------------
 inglenook-sidings-full-v2.prolog
-
+--------------------------------
 Find solutions to a classic switching (shunting) puzzle using Prolog.
-This set of predicates has been tested using SWI Prolog and gprolog on
-Linux and using SWI Prolog on Windows 10.
+
+inglenook-sidings-small-v2.prolog
+---------------------------------
+The small version of the puzzle.
+
+The information in this README file applies to the full size version.
+For similar information for the small version see the header comments
+in that file.  The small version is very similar except for the track
+capacities.
+
+All predicates (procedures) have been tested using SWI Prolog and gprolog
+on Linux and using SWI Prolog on Windows 10.
 
 Andrew Palm
 2019-10-28
@@ -60,6 +70,12 @@ You should get a printout showing
         shows the car positions between the engine moves.  The cars in
         the end state are in numerical order, five on track 1 and three
         on track 2.
+
+To exit SWI Prolog, type the query
+
+?- halt().
+
+For gprolog, omit the parentheses.
 
 Standard problems
 -----------------

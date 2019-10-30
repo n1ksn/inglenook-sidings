@@ -300,13 +300,13 @@ Solution: (read from top down)
 ---
 ## Development Notes
 
-Originally the intermediate goal for track 1 was set for [_,2,3,4,5],
+Originally the intermediate goal for track 1 was set for `[_,2,3,4,5]`,
 and this resulted in a run time of about 1.5 hours for typical examples.
-Changing this to [_,_,3,4,5] resulted in a run time of about a half
+Changing this to `[_,_,3,4,5]` resulted in a run time of about a half
 hour, with small changes in the number of steps needed.  Changing the
-intermediate goal for track 1 to [3,4,5] resulted in shorter solutions
+intermediate goal for track 1 to `[3,4,5]` resulted in shorter solutions
 (on average about 1 step) and much shorter run times.  Changing to
-[4,5] did not make a difference in the distribution of solution lengths.
+`[4,5]` did not make a difference in the distribution of solution lengths.
 The same was true when track 1 was specified to have 3, 4, and 5 as its
 last three occupants.
 

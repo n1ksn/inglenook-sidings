@@ -1,4 +1,4 @@
-## inglenook-sidings-full-v2.prolog
+## inglenook-sidings-full-v3.prolog
 
 Find solutions to a classic switching (shunting) puzzle using Prolog.
 
@@ -15,7 +15,7 @@ All predicates (procedures) have been tested using SWI Prolog and gprolog
 on Linux and using SWI Prolog on Windows 10.
 
 Andrew Palm
-2019-10-28
+2019-11-02
 
 ## Quick start
 
@@ -49,7 +49,7 @@ generate problem predicates it is named "e".
 On starting your version of Prolog you will see a prompt "?-".  You can
 use this "query" to load the code file:
 
-?- `['inglenook-sidings-full-v2.prolog'].`
+?- `['inglenook-sidings-full-v3.prolog'].`
 
 (assuming you are in the folder/directory where the code file resides).
 All entries require a period at the end.  If there are no errors you will
@@ -70,6 +70,11 @@ You should get a printout showing
     shows the car positions between the engine moves.  The cars in
     the end state are in numerical order, five on track 1 and three
     on track 2.
+
+Note that some solutions are found within a few seconds, while others
+can take much longer, up to about an hour.  A running predicate can be
+stopped by entering `cntl-c` and then the letter `a` to abort.  So if a
+solution is taking too long to calculate, one can stop it and try again.
 
 To exit SWI Prolog, type the query
 
@@ -300,15 +305,23 @@ Solution: (read from top down)
 ---
 ## Development Notes
 
+In this version, the solve predicate has been changed.  Now if the
+last three or more cars on track 1 are the same in the start and end
+states, then the heuristic intermediate node is not used.  The same
+is done if there are fewer than five cars total.  This gives better
+solutions when only a few moves are needed.
+
 Originally the intermediate goal for track 1 was set for `[_,2,3,4,5]`,
 and this resulted in a run time of about 1.5 hours for typical examples.
 Changing this to `[_,_,3,4,5]` resulted in a run time of about a half
 hour, with small changes in the number of steps needed.  Changing the
 intermediate goal for track 1 to `[3,4,5]` resulted in shorter solutions
 (on average about 1 step) and much shorter run times.  Changing to
-`[4,5]` did not make a difference in the distribution of solution lengths.
-The same was true when track 1 was specified to have 3, 4, and 5 as its
-last three occupants.
+`[4,5]` did not make a difference in the distribution of solution lengths.  The same was true when track 1 was specified to have 3, 4, and 5 as its last three occupants.
+
+Although the use of the intermediate node makes problem solution much
+shorter than a pure iterative deepening depth-first search, some problems
+may still take some time to be calculated (e.g., an hour).
 
 As per Bratko, "Prolog Programming for Artificial Intelligence, 2nd. ed.,
 Section 11.2, the solve_pure predicate is a depth-first iterative deepening

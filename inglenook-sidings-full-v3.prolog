@@ -392,8 +392,8 @@ solve(StartState, EndState) :-
   % If the last three cars on track 1 are the same in the start and
   % end states, find a minimal length solution without using an
   % intermediate node
-  nth1(2, StartState, StartTrk1),
-  nth1(2, EndState, EndTrk1),
+  [_, StartTrk1, _, _] = StartState,
+  [_, EndTrk1, _, _] = EndState,
   last_n(3, StartTrk1, StartTrk1Last3, _),
   last_n(3, EndTrk1, EndTrk1Last3, _),
   EndTrk1Last3 = StartTrk1Last3,
@@ -419,7 +419,7 @@ solve(StartState, EndState) :-
 %% solution steps in Path are in reverse order.
 solve_fwd(StartState, EndState, Path) :-
   % Construct intermediate goal state, a partial solution for track 1 only
-  nth1(2, EndState, EndTrk1),
+  [_, EndTrk1, _, _] = EndState,
   (last_n(3, EndTrk1, EndTrk1Last, _); EndTrk1Last = EndTrk1),
   IntState = [_, EndTrk1Last, _, _],
   path(StartState, IntState, Path1), !,    % Get path to intermediate state

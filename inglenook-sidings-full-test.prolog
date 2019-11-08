@@ -134,10 +134,10 @@ write_solution(Path) :-
   length(Path, N),
   Nsteps is N-1,
   %write(Nsteps), nl.   % This line is for writing number of moves only
-  write('Moves: '), write(Nsteps),
-  nl, write('Solution: (read from top down)'),
-  reverse(Path, RevPath),
-  nl, write_states(RevPath).
+  write('    '), write('Moves: '), write(Nsteps), nl.
+  %write('Solution: (read from top down)'),
+  %reverse(Path, RevPath),
+  %nl, write_states(RevPath).
 
 %% Write the solution path with track 0 re-reversed for output
 write_states([]) :- nl.
@@ -168,3 +168,25 @@ generate_all_problems :-
  	solve(StartState, EndState),
  	fail.
 
+generate_all_permutations :-
+  append('all-permutations.txt'), !,
+  permutation([1, 2, 3, 4, 5, 6, 7, 8], L),
+  write(L), write('.'), nl,
+  fail.
+
+read_permutations(FileName) :-
+  see(FileName),
+  repeat,
+    read(Term),
+    (  Term == end_of_file
+    -> !
+    ;  process(Term),
+       fail
+    ).
+
+process(StartList) :-
+	first_n(5, StartList, StartTrk1, StartTrk2),
+ 	StartState = [[e], StartTrk1, StartTrk2, []],
+ 	EndState = [[e], [1, 2, 3, 4, 5], [6, 7, 8], []],
+  write('Start state: '), write(StartState),
+ 	solve(StartState, EndState).

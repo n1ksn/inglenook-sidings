@@ -12,11 +12,11 @@ For similar information for the small version see the header comments
 in that file.  The small version is very similar except for the track
 capacities.
 
-All predicates (procedures) have been tested using SWI Prolog and gprolog
-on Linux and using SWI Prolog on Windows 10.
+All predicates (procedures) have been tested using SWI Prolog, gprolog,
+and yap on Linux and using SWI Prolog on Windows 10.
 
 Andrew Palm
-2019-11-02
+2019-11-09
 
 Quick start
 -----------
@@ -80,7 +80,7 @@ To exit SWI Prolog, type the query
 
 ?- halt().
 
-For gprolog, omit the parentheses.
+For gprolog and yap, omit the parentheses.
 
 Standard problems
 -----------------

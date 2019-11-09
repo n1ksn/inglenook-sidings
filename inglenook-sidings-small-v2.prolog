@@ -4,11 +4,11 @@
 %%% Find solutions to the smallest version of the classic shunting
 %%% (switching) puzzle using Prolog.
 %%%
-%%% This set of predicates has been tested using SWI Prolog and gprolog on
-%%% Linux and using SWI Prolog on Windows 10.
+%%% This set of predicates has been tested using SWI Prolog, gprolog, and
+%%% yap on Linux and using SWI Prolog on Windows 10.
 %%%
 %%% Andrew Palm
-%%% 2019-10-28
+%%% 2019-11-09
 %%%
 %%% Quick start
 %%% -----------
@@ -67,7 +67,7 @@
 %%%
 %%% ?- halt().
 %%%
-%%% For gprolog, omit the parentheses.
+%%% For gprolog and yap, omit the parentheses.
 %%%
 %%% Standard problems
 %%% -----------------
@@ -239,6 +239,11 @@
 %%% heuristic-free searches.
 %%%
 %%%------------------------------------------------------------------------
+%%% These are for use in yap.  They can be commented out when using
+%%% swi prolog or gprolog
+:- use_module(library(lists)).
+:- use_module(library(apply_macros)).
+:- use_module(library(random)).
 %%%
 %%% Predicates to find solutions
 %%% ----------------------------

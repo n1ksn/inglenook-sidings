@@ -11,11 +11,11 @@ For similar information for the small version see the header comments
 in that file.  The small version is very similar except for the track
 capacities.
 
-All predicates (procedures) have been tested using SWI Prolog and gprolog
-on Linux and using SWI Prolog on Windows 10.
+All predicates (procedures) have been tested using SWI Prolog, gprolog,
+and yap on Linux and using SWI Prolog on Windows 10.
 
 Andrew Palm
-2019-11-02
+2019-11-09
 
 ## Quick start
 
@@ -80,7 +80,7 @@ To exit SWI Prolog, type the query
 
 ?- `halt().`
 
-For gprolog, omit the parentheses.
+For gprolog and yap, omit the parentheses.
 
 ---
 ## Standard problems
@@ -317,7 +317,9 @@ Changing this to `[_,_,3,4,5]` resulted in a run time of about a half
 hour, with small changes in the number of steps needed.  Changing the
 intermediate goal for track 1 to `[3,4,5]` resulted in shorter solutions
 (on average about 1 step) and much shorter run times.  Changing to
-`[4,5]` did not make a difference in the distribution of solution lengths.  The same was true when track 1 was specified to have 3, 4, and 5 as its last three occupants.
+`[4,5]` did not make a difference in the distribution of solution lengths.
+The same was true when track 1 was specified to have 3, 4, and 5 as its
+last three occupants.
 
 Although the use of the intermediate node makes problem solution much
 shorter than a pure iterative deepening depth-first search, some problems

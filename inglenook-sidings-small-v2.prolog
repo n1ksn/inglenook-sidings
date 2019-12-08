@@ -244,6 +244,10 @@
 :- use_module(library(lists)).
 :- use_module(library(apply_macros)).
 :- use_module(library(random)).
+append(File) :-
+  open(File, 'append', Stream),
+  set_output(Stream).
+
 %%%
 %%% Predicates to find solutions
 %%% ----------------------------

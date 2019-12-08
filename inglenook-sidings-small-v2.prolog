@@ -71,13 +71,13 @@
 %%%
 %%% Standard problems
 %%% -----------------
-%%% At the start there are five cars on track 1 representing an arriving
+%%% At the start there are three cars on track 1 representing an arriving
 %%% train with the engine placed on the switching lead (head shunt),
-%%% track 0.  There are also three cars on siding track 2, for a total
-%%% of eight cars.  We assign the numbers 1 to 8 randomly as labels of
-%%% the cars in their starting positions.  At the end the eight cars
-%%% are distributed so that track 1 contains cars 1, 2, 3, 4, and 5 in
-%%% that order from west to east, and similarly cars 6, 7, and 8 are on
+%%% track 0.  There are also two cars on siding track 2, for a total
+%%% of five cars.  We assign the numbers 1 to 5 randomly as labels of
+%%% the cars in their starting positions.  At the end the five cars
+%%% are distributed so that track 1 contains cars 1, 2, and 3 in
+%%% that order from west to east, and similarly cars 4 and 5 are on
 %%% track 2 in order from west to east.
 %%%
 %%%   Start:  Track 0: engine
